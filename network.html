@@ -71,17 +71,14 @@
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
 
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="koovers-dms.html">Koovers DMS </a></li>
+                                    <li><a href="index.html#about">About Us</a></li>
+                                    <li><a href="index.html#Koovers">Koovers DMS </a></li>
                                     <!-- <li><a href="#">Our Services</a> -->
 
-                                    <li class="dropdown"><a href="#">Our Services</a>
-                                         <ul>
-                                            <li><a href="why-choose-koovers.html">Why Choose Koovers?</a></li>
-                                           
-                                        </ul>
+                                    <li><a href="index.html#services">Our Services</a>
+                                       
                                     </li>
-                                    <li class="active"><a href="network.html">Our Network</a>
+                                    <li><a href="network.html">Our Network</a>
 
                                     </li>
                                     <li><a href="career.html">Careers</a>
@@ -96,7 +93,12 @@
                     </div>
                 </div>
                 <div class="menu-right-content">
-                    <div class="search-toggler"><i class="icon-36"></i></div>
+                    <div class="search-toggler">
+                        <div class="search-wrapper">
+                            <i class="icon-36"></i>
+                            <input type="text" class="search-input" placeholder="Brand, Model, Part Name">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -119,7 +121,12 @@
                     </div>
                 </div>
                 <div class="menu-right-content">
-                    <div class="search-toggler"><i class="icon-36"></i></div>
+                    <div class="search-toggler">
+                        <div class="search-wrapper">
+                            <i class="icon-36"></i>
+                            <input type="text" class="search-input" placeholder="Brand, Model, Part Name">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -145,8 +152,8 @@
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                         <div class="content_block_three">
                             <div class="content-box ml_30">
-                                <div class="sec-title">
-                                    <span class="sub-title gradient-color">Our Network</span>
+                                <div class="sec-title mb_25">
+                                    <h2>Our Network</h2>
                                 </div>
                                 <div class="text-box mb_35">
                                     <p>Koovers has established a robust and extensive network with a Pan India presence,
@@ -218,21 +225,20 @@
         </section>
         <!-- feature-section end -->
         <div class="container text-center mt-4">
-            <h3 class="mb_25">Our Hubs Locations</h3>
+            <div class="sec-title centred mb_25">
+                <h2>Our Locations</h2>
+            </div>
             <div id="map" class="mb_25"></div>
         </div>
         
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                // Initialize the map centered on India
                 var map = L.map('map').setView([22.3511, 78.6677], 5);
         
-                // Add OpenStreetMap tile layer
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; OpenStreetMap contributors'
                 }).addTo(map);
         
-                // Fetch and load India boundary GeoJSON
                 fetch("https://raw.githubusercontent.com/iamspruce/India-geoJson/main/india-states.geojson")
                     .then(response => response.json())
                     .then(data => {
@@ -247,8 +253,23 @@
                     })
                     .catch(error => console.error("Error loading GeoJSON:", error));
         
-                // Updated locations with details
-                var locations = [
+                // Default blue marker for "Our Hubs"
+                var defaultIcon = L.icon({
+                    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+                });
+        
+                // Custom red marker for "Connect"
+                var redIcon = L.icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                });
+        
+                var hubs = [
                     { name: "Bangalore", lat: 12.9716, lon: 77.5946, address: "No 28, 1, Sirsi Rd, Chamrajpet, Bengaluru, Karnataka 560018", phone: "📞 8970029000" },
                     { name: "Chennai", lat: 13.0827, lon: 80.2707, address: "Plot no 72&73, Indira Nagar, Vanagaram, Chennai, Tamil Nadu 600095", phone: "📞 8970029000" },
                     { name: "Kochi", lat: 9.9312, lon: 76.2673, address: "43/3720A, Bavaraparambu, Nandanath Kochako Road, Post, opposite Hotel Holiday Inn, Thammanam, Ernakulam, Kochi, Kerala 682032", phone: "📞 8970029000" },
@@ -258,14 +279,38 @@
                     { name: "Noida & Jaipur", lat: 28.5355, lon: 77.3910, address: "B96, E/3, Block B, Sector 60, Noida, Uttar Pradesh 201301", phone: "📞 8970029000" }
                 ];
         
-                // Add markers with popups
-                locations.forEach(location => {
-                    L.marker([location.lat, location.lon])
+                var connectLocations = [
+                    { name: "Delhi", lat: 28.6643, lon: 77.2282, address: "No.1227, Mahal Sarai, Chhota Bazar, Kashmiri Gate, Delhi - 110006", phone: "📞 6366944805" },
+                    { name: "Whitefield, Bangalore", lat: 12.9563, lon: 77.7010, address: "PRS Habitat, Ground Floor, 7, Munnekolala, Varthur, Bengaluru, Karnataka 560037", phone: "📞 8970029000" },
+                    { name: "OMR, Chennai", lat: 12.8992, lon: 80.2271, address: "2/563, V.Nagar, Semmozhi Salai, Sholinganallur Main Rd, Chennai, TN 600100", phone: "📞 8970029000" },
+                    { name: "Puducherry", lat: 11.9362, lon: 79.8306, address: "No 68, AVS Tower, 100 Feet Rd, Reddiarpalayam, Puducherry 605005", phone: "📞 8970029000" },
+                    { name: "Salem", lat: 11.6643, lon: 78.1460, address: "Ground Floor, Siva Tower, Meyyanur Main Rd, Salem, TN 636004", phone: "📞 8970029000" },
+                    { name: "Mysore", lat: 12.2958, lon: 76.6394, address: "B.K Street, behind Chopras, Devaraja Mohalla, Mysuru, Karnataka 570001", phone: "📞 8970029000" },
+                    { name: "Shimoga", lat: 13.9304, lon: 75.5604, address: "KIADB Auto Complex, Vinoba Nagara, Shivamogga, Karnataka 577204", phone: "📞 8970029000" },
+                    { name: "Hubli", lat: 15.3647, lon: 75.1240, address: "945P+G3Q, Vidya Nagar, Hubballi, Karnataka 580032", phone: "📞 8970029000" },
+                    { name: "Visakhapatnam", lat: 17.7215, lon: 83.3018, address: "50-92-11/5, opp. 4th Town Police Station, Dwaraka Nagar, Vizag 530016", phone: "📞 7411150088" },
+                    { name: "Tiruchirappalli", lat: 10.7905, lon: 78.7047, address: "2/9 Lawsons Road, Cantonment, Trichy - 620001", phone: "📞 8970029000" },
+                    { name: "Mangalore", lat: 12.9141, lon: 74.8560, address: "Door No. 2 - 55/13, Lotus Galaxy, Behind BH Store, Mangaluru, Karnataka - 505007", phone: "📞 8970029000" },
+                    { name: "Vellore", lat: 12.9165, lon: 79.1325, address: "Door No - 5, Old Bypass Road (Ma-Po-Si-Salai)", phone: "📞 8970029000" },
+                    { name: "Vijayawada", lat: 16.5062, lon: 80.6480, address: "No. 27-19-42 Durgaiah Street, Governopet, Vijayawada, AP - 520002", phone: "📞 7411150088" },
+                    { name: "Electronic City, Bangalore", lat: 12.8382, lon: 77.6799, address: "#160/2, Hebbagodi, Opp Biocon, Electronic City, Bangalore - 560100", phone: "📞 8970029000" },
+                    { name: "GP Road, Chennai", lat: 13.0627, lon: 80.2742, address: "New No. 13, Biyram Jung Street, Anna Salai, Chennai - 600002", phone: "📞 8970029000" }
+                ];
+        
+                hubs.forEach(location => {
+                    L.marker([location.lat, location.lon], { icon: defaultIcon })
                         .addTo(map)
                         .bindPopup(`<strong>${location.name}</strong><br>${location.address}<br>${location.phone}`);
                 });
+        
+                connectLocations.forEach(location => {
+                    L.marker([location.lat, location.lon], { icon: redIcon })
+                        .addTo(map)
+                        .bindPopup(`<strong>Connect: ${location.name}</strong><br>${location.address}<br>${location.phone}`);
+                });
             });
         </script>
+        
           <style>
            
             #map {
@@ -276,8 +321,8 @@
             }
         </style>
  
-  <!-- main-footer -->
-  <footer class="main-footer radius_0">
+ <!-- main-footer -->
+ <footer class="main-footer radius_0">
     <div class="outer-container p_relative">
 
         <div class="main-footer-content bg-color-1 p_relative">
@@ -320,11 +365,11 @@
                                     <div class="col-md-6 col-6 footer-column">
                                         <div class="footer-widget links-widget margin-left-60">
                                             <div class="widget-title">
-                                                <h3>Company</h3>
+                                                <h3>&#160;</h3>
                                             </div>
                                             <div class="widget-content">
                                                 <ul class="links-list flex-wrap flex-md-column">
-                                                    <li><a href="about.html">About Us</a></li>
+                                                    <li><a href="index.html#about">About Us</a></li>
                                                     <li><a href="network.html">Our Network</a></li>
                                                     <li><a href="contact.html">Contact us</a></li>
                                                 </ul>
@@ -339,9 +384,9 @@
                                             </div>
                                             <div class="widget-content">
                                                 <ul class="links-list flex-wrap flex-md-column">
-                                                    <li><a href="koovers-dms.html">Koovers DMS</a></li>
-                                                    <li><a href="why-choose-koovers.html">Why Choose
-                                                            Koovers?</a></li>
+                                                    <li><a href="index.html#Koovers">Koovers DMS</a></li>
+                                                    <li><a href="index.html#services">Our Services
+                                                    </a></li>
                                                     <li><a href="career.html">Careers</a></li>
                                                 </ul>
                                             </div>
@@ -359,9 +404,10 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="#">Terms of Use</a></li>
-                                        <li><a href="#">Return Policy</a></li>
+                                        <li><a href="privacy.html">Privacy Policy</a></li>
+                                        <li><a href="termsofuse.html">Terms of Use</a></li>
+                                        <li><a href="returnpolicy.html">Return Policy</a></li>
+
                                     </ul>
                                 </div>
                                 <a href="https://play.google.com/store/apps/details?id=com.krsv.kdms"
@@ -401,7 +447,7 @@
                         <div class="search-box">
                             <h4>Search Here</h4>
                             <div class="input-group mt-2">
-                                <input type="text" class="form-control" placeholder="Search: Brand, Model, Part Name">
+                                <input type="text" class="form-control" placeholder="Brand, Model, Part Name">
                                 <span class="input-group-text"><i class="fas fa-search"></i></span>
                             </div>
                         </div>

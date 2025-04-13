@@ -14,7 +14,31 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 370px;
+  gap: 150px;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-wrapper i {
+  position: absolute;
+  right: 10px; /* Adjust based on your icon size */
+  pointer-events: none;
+}
+
+.search-input {
+  padding: 8px 12px 8px 34px;
+  border: 1px solid #ccc;
+  border-radius: 8px !important;
+  outline: none;
+}
+.search-input::placeholder {
+  color: #aaa;
+  font-size: 14px;
+  opacity: 1; /* Keep it fully visible */
 }
 
 .main-header .outer-container:before{
