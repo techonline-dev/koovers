@@ -91,6 +91,15 @@
   font-size: 30px;
   line-height: 36px;
 }
+.search-wrapper {
+  width: 80%;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.search-input {
+  width: 100%;
+  color: #fff !important;
+}
 
 }
 
