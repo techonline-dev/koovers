@@ -14,7 +14,7 @@
   margin-bottom: 32px;
 }
 .text-box p{
-  font-size: 20px;
+  font-size: 18px;
 }
 .content_block_one .content-box .inner-box{
   position: relative;
@@ -473,7 +473,7 @@
 
   .content_block_three .content-box{
     margin-left: 0px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
   }
 
   .about-style-three .content-box{

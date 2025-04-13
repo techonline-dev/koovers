@@ -187,14 +187,15 @@ p{
   color: var(--text-color);
   font-weight: 400;
   margin: 0px;
+  line-height: 24px;
 }
 
 h1,h2,h3,h4,h5,h6{
   font-family: "Outfit";
   position:relative;
   font-weight: 700;
-  color: var(--title-color);
-  margin: 0px;
+  color: #005277;
+    margin: 0px;
 }
 
 
