@@ -28,11 +28,10 @@
 .contact-section .content-box .info-box .info-list li{
   position: relative;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 20px;
   margin-bottom: 30px;
   font-size: 18px;
-  line-height: 24px;
   font-family: var(--text-font);
   font-weight: 500;
 }
@@ -165,10 +164,9 @@
   border: 1px solid #d1d1d1;
   background: #ffffff;
   border-radius: 8px;
-  font-size: 18px;
-  color: var(--text-color) !important;
+  font-size: 14px;
+  color: #000 !important;
   padding: 10px 20px;
-  transition: all 500ms ease;
 }
 
 .contact-section .form-inner .form-group input:focus,
