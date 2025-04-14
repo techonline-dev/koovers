@@ -60,7 +60,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 16px;
   color: #FEAA2F;
   gap: 7px;
@@ -177,7 +177,7 @@
   align-items: center;
   justify-content: center;
   gap: 7px;
-  font-size: 16px;
+  font-size: 18px;
   color: #FEAA2F;
   margin-bottom: 16px;
 }
@@ -199,7 +199,7 @@
 .testimonial-block-one .inner-box .designation{
   position: relative;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 22px;
 }
 
@@ -285,7 +285,7 @@
 .testimonial-style-three .testimonial-content .designation{
   position: relative;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 22px;
 }
 
@@ -335,7 +335,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 20px;
   font-weight: 500;
   margin-bottom: 17px;
@@ -523,7 +523,7 @@
 
 @media only screen and (max-width: 499px){
   .testimonial-block-one .inner-box p{
-    font-size: 16px;
+    font-size: 18px;
     line-height: 26px;
   }
 

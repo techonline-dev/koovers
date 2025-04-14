@@ -31,14 +31,14 @@
   align-items: center;
   gap: 20px;
   margin-bottom: 30px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   font-family: var(--text-font);
   font-weight: 500;
 }
 .locationtitle{
   color: #111928;
-  font-size: 16px;
+  font-size: 18px;
   
   display: grid;
   font-weight: 700;
@@ -69,7 +69,7 @@
   display: inline-block;
   color: #000000;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .contact-section .content-box .info-box .info-list li a:hover{
@@ -149,7 +149,7 @@
 .contact-section .form-inner .form-group label{
   position: relative;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 28px;
   color: var(--title-color);
   margin-bottom: 6px;
@@ -165,7 +165,7 @@
   border: 1px solid #d1d1d1;
   background: #ffffff;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-color) !important;
   padding: 10px 20px;
   transition: all 500ms ease;

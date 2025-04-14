@@ -340,14 +340,14 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 26px;
   font-weight: 500;
 }
 
 .banner-style-two .image-box .single-item .rating-box h6 i{
   color: #FFB31F;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .banner-style-two .image-box .image-shape{
@@ -592,14 +592,14 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 26px;
   font-weight: 500;
 }
 
 .banner-style-four .image-box .rating-box h6 i{
   color: #FFB31F;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .banner-style-four .clients-box{
@@ -794,7 +794,7 @@
 
 .banner-style-five .clients-box h6{
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 26px;
   color: #fff;
   font-weight: 500;

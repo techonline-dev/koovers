@@ -570,7 +570,7 @@
 }
 
 .mobile-menu .navigation li ul li > a{
-  font-size: 16px;
+  font-size: 18px;
   margin-left: 20px;
   text-transform: capitalize;
 }
@@ -794,7 +794,7 @@ div#mCSB_1_container{
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 28px;
   font-weight: 500;
 }
@@ -817,7 +817,7 @@ div#mCSB_1_container{
 .header-top .right-column .login-box a{
   position: relative;
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 28px;
   font-weight: 500;
   color: var(--title-color);
@@ -848,7 +848,7 @@ div#mCSB_1_container{
 .header-top .right-column .social-links li a{
   position: relative;
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 28px;
   color: var(--title-color);
 }

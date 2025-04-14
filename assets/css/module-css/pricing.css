@@ -101,7 +101,7 @@
 .pricing-block-one .pricing-table .table-header .text{
   position: relative;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 25px;
   margin-bottom: 25px;
 }
@@ -117,7 +117,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 26px;
   margin-bottom: 14px;
 }

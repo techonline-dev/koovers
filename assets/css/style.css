@@ -187,7 +187,8 @@ p{
   color: var(--text-color);
   font-weight: 400;
   margin: 0px;
-  line-height: 24px;
+  line-height: 28px;
+  font-size: 18px;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -1000,7 +1001,7 @@ button.ltr {
   line-height: 54px;
   text-align: center;
   border-radius: 50%;
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
   background: var(--theme-color);
   cursor: pointer;
@@ -1315,9 +1316,9 @@ button.ltr {
   display: block;
   padding-left: 28px;
   font-size: 18px;
-  line-height: 30px;
+  line-height: 28px;
   font-weight: 500;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .list-style-one li:before{
@@ -1513,7 +1514,7 @@ button.ltr {
 }
 
 .job-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: #555;
 }

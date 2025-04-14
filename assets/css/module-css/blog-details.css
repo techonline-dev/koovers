@@ -24,7 +24,7 @@
 .blog-details-content .list-item li{
   position: relative;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 26px;
   font-weight: 500;
   padding-left: 21px;
@@ -123,7 +123,7 @@
 .blog-details-content .comment-form-area .form-group label{
   position: relative;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 28px;
   color: var(--title-color);
   margin-bottom: 6px;
@@ -138,7 +138,7 @@
   height: 50px;
   border: 1px solid #E5E5E5;
   border-radius: 15px;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-color);
   padding: 10px 20px;
   transition: all 500ms ease;

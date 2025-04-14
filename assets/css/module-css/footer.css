@@ -62,7 +62,7 @@
   height: 50px;
   border-radius: 30px;
   border: 1px solid #000;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--title-color);
   padding: 10px 30px;
@@ -130,7 +130,7 @@
 
 .main-footer-content .links-widget .links-list li a{
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 26px;
   color: #000;
 }
@@ -144,8 +144,8 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 28px;
   color: #000;
   margin-bottom: 10px;
 }
@@ -168,7 +168,7 @@
 }
 
 .main-footer-content .contact-widget .info-list li:nth-child(2) i{
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .main-footer .social-links{
@@ -187,7 +187,7 @@
   /* background: rgba(255, 255, 255, 0.10); */
   border-radius: 50%;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   color: #005277;
   z-index: 1;
 }
