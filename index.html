@@ -239,30 +239,33 @@
         <script>
             gsap.registerPlugin(ScrollTrigger);
           
+            // Image Animation from bottom to top
             gsap.from("#about-content", {
               scrollTrigger: {
-                trigger: "#about",
-                start: "top 80%",
-                end: "bottom center",
-                scrub: true,
+                trigger: "#about",  // Trigger when this element enters the viewport
+                start: "top 80%",           // Start the animation when the element's top is at 80% of the viewport height
+                end: "bottom top",          // End the animation when the element's bottom reaches the top of the viewport
+                scrub: true,                // Optional: makes the animation "scrub" with the scroll, smoothening it
               },
-              y: -100, // 👈 slide from top
-              opacity: 0,
-              duration: 1.5,
-              ease: "power2.out"
+              y: 50,                      // Move the element 50px upwards
+              opacity: 0,                 // Start with 0 opacity (hidden)
+              duration: 1,                // Duration of the animation
+              ease: "power3.out",         // Easing for the animation
             });
           
+            // Content Animation from bottom to top
             gsap.from("#about-image", {
               scrollTrigger: {
-                trigger: "#about",
-                start: "top 80%",
-                end: "bottom center",
-                scrub: true,
+                trigger: "#about", // Trigger when this element enters the viewport
+                start: "top 80%",            // Start the animation when the element's top reaches 80% of the viewport height
+                end: "bottom top",           // End the animation when the element's bottom reaches the top of the viewport
+                scrub: true,                 // Optional: makes the animation "scrub" with the scroll, smoothening it
               },
-              y: -100, // 👈 slide from top
-              opacity: 0,
-              duration: 1.5,
-              ease: "power2.out"
+              y: 50,                       // Move the element 50px upwards
+              opacity: 0,                  // Start with 0 opacity (hidden)
+              duration: 1,                 // Duration of the animation
+              delay: 0.2,                  // Delay to stagger with the previous animation
+              ease: "power3.out",          // Easing for the animation
             });
           </script>
 <!-- Your existing section -->
@@ -328,7 +331,7 @@
   </script>
   
   
-  <section id="parts-section" class="scroll-section">
+  <section  class="scroll-section">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 column1 scroll-left" style="background-image: url('assets/images/car.png');">
