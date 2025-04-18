@@ -99,9 +99,7 @@
 .search-input {
   width: 100%;
   color: #fff !important;
-}
-
-}
+}}
 .responsive-video {
   width: 100%;
   height: 600px;
@@ -112,6 +110,21 @@
   .responsive-video {
     height: 188px;
   }
+  .mt_50
+  {
+    margin-top: 20px;
+  }
+  .download {
+    width: 70%;
+    margin-top: 12%;
+    margin-left: 25%;
+}
+.textwidth
+{
+  width: 100%;
+}
+
+
 }
 
 @media only screen and (max-width: 599px){
@@ -140,23 +153,3 @@
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

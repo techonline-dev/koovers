@@ -443,41 +443,54 @@
 
                 </div>
 
-                <div class="row">
-                    <!-- Always visible logos -->
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/honda.png" alt=""></div>
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/kia.png" alt=""></div>
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/mahindra.png" alt=""></div>
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/maruti.png" alt=""></div>
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/nissan.png" alt=""></div>
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/audi.png" alt=""></div>
+                <div class="row logo-row">
+                    <div class="col-6 col-md-2 pb_5"><img class="brand-logo"  src="assets/images/logo/kia.png" alt=""></div>
+                    <div class="col-6 col-md-2 pb_5"><img class="brand-logo" src="assets/images/logo/mahindra.png" alt=""></div>
+                    <div class="col-6 col-md-2 pb_5"><img  class="brand-logo" src="assets/images/logo/maruti.png" alt=""></div>
+                    <div class="col-6 col-md-2 pb_5"><img class="brand-logo" src="assets/images/logo/nissan.png" alt=""></div>
+                    <div class="col-6 col-md-2 pb_5"><img class="brand-logo" src="assets/images/logo/audi.png" alt=""></div>
+                    <div class="col-6 col-md-2 pb_5"><img class="brand-logo" src="assets/images/logo/honda.png" alt=""></div>
+
 
                 </div>
-                <div class="row">
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/renault.png" alt=""></div>
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/skoda.png" alt=""></div>
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/tata.png" alt=""></div>
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/toyota.png" alt=""></div>
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/vol.png" alt=""></div>
-                    <div class="col-6 col-md-2 pb_5"><img src="assets/images/logo/Mercedes-Benz.png" alt=""></div>
+                <div class="row logo-row">
+                    <div class="col-6 col-md-2 pb_5"><img class="brand-logo" src="assets/images/logo/renault.png" alt=""></div>
+                    <div class="col-6 col-md-2 pb_5"><img  class="brand-logo" src="assets/images/logo/skoda.png" alt=""></div>
+                    <div class="col-6 col-md-2 pb_5"><img class="brand-logo" src="assets/images/logo/tata.png" alt=""></div>
+                    <div class="col-6 col-md-2 pb_5"><img class="brand-logo" src="assets/images/logo/toyota.png" alt=""></div>
+                    <div class="col-6 col-md-2 pb_5"><img  class="brand-logo"src="assets/images/logo/vol.png" alt=""></div>
+                    <div class="col-6 col-md-2 pb_5"><img  class="brand-logo" src="assets/images/logo/Mercedes-Benz.png" alt=""></div>
 
                 </div>
-                <!-- Script -->
                 <script>
-                    document.getElementById("toggleButton").addEventListener("click", function (event) {
-                        event.preventDefault();
-                        const extraRow = document.getElementById("extraRow");
-                        const buttonText = this.querySelector(".text");
-
-                        if (extraRow.classList.contains("hidden")) {
-                            extraRow.classList.remove("hidden");
-                            buttonText.textContent = "Show Less";
-                        } else {
-                            extraRow.classList.add("hidden");
-                            buttonText.textContent = "Show More";
+                    gsap.registerPlugin(ScrollTrigger);
+                  
+                    // Animate each row on scroll repeatedly
+                    document.querySelectorAll(".logo-row").forEach((row) => {
+                      gsap.fromTo(
+                        row.querySelectorAll(".brand-logo"),
+                        {
+                          y: 40,
+                          opacity: 0
+                        },
+                        {
+                          scrollTrigger: {
+                            trigger: row,
+                            start: "top 80%",
+                            end: "bottom center",
+                            scrub: true, // makes it scroll-tied
+                          },
+                          y: 0,
+                          opacity: 1,
+                          stagger: 0.2,
+                          ease: "power2.out"
                         }
+                      );
                     });
-                </script>
+                  </script>
+                  
+                  
+                  
 
             </div>
         </section>
@@ -585,7 +598,7 @@
             <div class="pattern-layer"></div>
             <div class="auto-container">
                 <div class="row clearfix align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column"  id="career-content">
                         <div class="content_block_one">
                             <div class="content-box mr_100">
                                 <div class="sec-title mb_45">
@@ -602,7 +615,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column" id="career-image">
 
                         <figure class="image image-1"><img src="assets/images/sign.png" alt="">
                         </figure>
@@ -612,119 +625,141 @@
             </div>
         </section>
         <!-- about-section end -->
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+          
+            gsap.from("#career-content", {
+              scrollTrigger: {
+                trigger: ".about-section",
+                start: "top 80%",
+                end: "bottom center",
+                scrub: true,
+              },
+              y: -100,
+              opacity: 0,
+              duration: 1.5,
+              ease: "power2.out"
+            });
+          
+            gsap.from("#career-image", {
+              scrollTrigger: {
+                trigger: ".about-section",
+                start: "top 80%",
+                end: "bottom center",
+                scrub: true,
+              },
+              y: -100,
+              opacity: 0,
+              duration: 1.5,
+              ease: "power2.out"
+            });
+          </script>
+          
 
-        <!-- main-footer -->
-        <footer class="main-footer radius_0">
-            <div class="outer-container p_relative">
+ <!-- main-footer -->
+ <footer class="main-footer radius_0">
+    <div class="outer-container p_relative">
 
-                <div class="main-footer-content bg-color-1 p_relative">
-                    <div class="widget-section p_relative pt_40">
-                        <div class="auto-container">
-                            <div class="row clearfix">
-                                <div class="col-lg-3 col-md-12 col-sm-12 footer-column">
-                                    <div class="footer-widget contact-widget">
-                                        <figure class="logo-box"><a href="index.html"><img
-                                                    src="assets/images/kooversLogo.svg" alt=""></a>
-                                        </figure>
-                                        <div class="widget-content">
-                                            <ul class="info-list mb_25 pt_40">
-                                                <li><img src="assets/images/icons/geo-alt.svg" alt=""><span>No 8, 3rd
-                                                        Floor, Park Inc Armatic Building,
-                                                        27th Cross, Banashankari 2nd Stage,
-                                                        Bengaluru - 560070.</span></li>
-                                                <li><img src="assets/images/icons/send.svg fill.svg" alt=""><span>Email:
-                                                        <a
-                                                            href="mailto:customersupport@koovers.in">customersupport@koovers.in</a></span>
-                                                </li>
-                                                <!-- <li><i class="icon-11"></i><span>Phone: <a href="tel:3336660000">333 666
+        <div class="main-footer-content bg-color-1 p_relative">
+            <div class="widget-section p_relative pt_40">
+                <div class="auto-container">
+                    <div class="row clearfix">
+                        <div class="col-lg-3 col-md-12 col-sm-12 footer-column">
+                            <div class="footer-widget contact-widget">
+                                <figure class="logo-box"><a href="index.html"><img
+                                            src="assets/images/kooversLogo.svg" alt=""></a>
+                                </figure>
+                                <div class="widget-content">
+                                    <ul class="info-list mb_25 pt_40">
+                                        <li><img src="assets/images/icons/geo-alt.svg" alt=""><span>No 8, 3rd
+                                                Floor, Park Inc Armatic Building,
+                                                27th Cross, Banashankari 2nd Stage,
+                                                Bengaluru - 560070.</span></li>
+                                        <li><img src="assets/images/icons/send.svg fill.svg" alt=""><span>Email:
+                                                <a
+                                                    href="mailto:customersupport@koovers.in">customersupport@koovers.in</a></span>
+                                        </li>
+                                        <!-- <li><i class="icon-11"></i><span>Phone: <a href="tel:3336660000">333 666
                                             0000</a></span></li> -->
-                                            </ul>
-
-                                        </div>
-                                    </div>
-                                    <ul class="social-links">
-                                        <li><a href="https://www.facebook.com/people/Koovers-India/61566823085657/" target="_blank"><img src="assets/images/icons/facebook.svg" alt=""></a></li>
-                                        <li><a href="https://www.instagram.com/kooversindia/" target="_blank"><img src="assets/images/icons/insta.svg" alt=""></i></a></li>
-                                        <li><a href="https://www.linkedin.com/company/koovers" target="_blank"><img src="assets/images/icons/linkdin.svg" alt=""></i></a></li>
                                     </ul>
+
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
-                                    <div class="auto-container" style="
+                            </div>
+                            <ul class="social-links">
+                                <li><a href="https://www.facebook.com/people/Koovers-India/61566823085657/" target="_blank"><img src="assets/images/icons/facebook.svg" alt=""></a></li>
+                                <li><a href="https://www.instagram.com/kooversindia/" target="_blank"><img src="assets/images/icons/insta.svg" alt=""></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/koovers" target="_blank"><img src="assets/images/icons/linkdin.svg" alt=""></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
+                            <div class="auto-container" style="
                     padding: 0px;
                 ">
-                                        <div class="row d-flex flex-wrap">
-                                            <div class="col-md-6 col-6 footer-column">
-                                                <div class="footer-widget links-widget margin-left-60">
-                                                    <div class="widget-title">
-                                                        <h3>&#160;</h3>
-                                                    </div>
-                                                    <div class="widget-content">
-                                                        <ul class="links-list flex-wrap flex-md-column">
-                                                            <li><a href="index.html#about">About Us</a></li>
-                                                            <li><a href="network.html">Our Network</a></li>
-                                                            <li><a href="contact.html">Contact us</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-6 footer-column">
-                                                <div class="footer-widget links-widget margin-left-30">
-                                                    <div class="widget-title">
-                                                        <h3>&#160;
-                                                        </h3>
-                                                    </div>
-                                                    <div class="widget-content">
-                                                        <ul class="links-list flex-wrap flex-md-column">
-                                                            <li><a href="index.html#Koovers">Koovers DMS</a></li>
-                                                            <li><a href="index.html#services">Our Services
-                                                                </a></li>
-                                                            <li><a href="career.html">Careers</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                <div class="row d-flex flex-wrap">
+                                    <div class="col-md-6 col-6 footer-column">
+                                        <div class="footer-widget links-widget margin-left-60">
+                                         
+                                            <div class="widget-content mt_50">
+                                                <ul class="links-list flex-wrap flex-md-column">
+                                                    <li><a href="index.html#about">About Us</a></li>
+                                                    <li><a href="network.html">Our Network</a></li>
+                                                    <li><a href="contact.html">Contact us</a></li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
-
-
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                                    <div class="footer-widget links-widget">
-                                        <div class="widget-title">
-                                           <h3>&#160;</h3>
+                                    <div class="col-md-6 col-6 footer-column">
+                                        <div class="footer-widget links-widget margin-left-30">
+                                         
+                                            <div class="widget-content mt_50">
+                                                <ul class="links-list flex-wrap flex-md-column">
+                                                    <li><a href="index.html#Koovers">Koovers DMS</a></li>
+                                                    <li><a href="index.html#services">Our Services
+                                                    </a></li>
+                                                    <li><a href="career.html">Careers</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="widget-content">
-                                            <ul class="links-list clearfix">
-                                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                                <li><a href="termsofuse.html">Terms of Use</a></li>
-                                                <li><a href="returnpolicy.html">Return Policy</a></li>
-
-                                            </ul>
-                                        </div>
-                                        <a href="https://play.google.com/store/apps/details?id=com.krsv.kdms"
-                                            target="_blank"><img src="assets/images/paystore.png" alt="" title=""
-                                                class="download"></a>
-
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
-                    </div>
-                    <div class="footer-bottom">
-                        <div class="auto-container">
-                            <div class="bottom-inner">
-                                <div class="copyright">
-                                    <p>Copyright 2025 by <a href="index.html">koovers</a> All Right Reserved.</p>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget links-widget download-btn">
+                              
+                                <div class="widget-content mt_50">
+                                    <ul class="links-list clearfix">
+                                        <li><a href="privacy.html">Privacy Policy</a></li>
+                                        <li><a href="termsofuse.html">Terms of Use</a></li>
+                                        <li><a href="returnpolicy.html">Return Policy</a></li>
+
+                                    </ul>
                                 </div>
+                                <a href="https://play.google.com/store/apps/details?id=com.krsv.kdms"
+                                    target="_blank"><img src="assets/images/paystore.png" alt="" title=""
+                                        class="download"></a>
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- main-footer end -->
+            <div class="footer-bottom">
+                <div class="auto-container">
+                    <div class="bottom-inner">
+                        <div class="copyright">
+                            <p>Copyright 2025 by <a href="index.html">koovers</a> All Right Reserved.</p>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- main-footer end -->
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
