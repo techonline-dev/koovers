@@ -190,6 +190,29 @@ p{
   line-height: 30px;
   font-size: 20px;
 }
+.block-shadow:hover {
+  box-shadow: 2px 2px 20px 2px #edecec;
+  position: relative;
+  background: #fafafab8 !important;
+  background: #fff;
+  /* border: 1px solid #000; */
+  z-index: 1;
+}
+.scroll-section {
+  position: relative;
+  overflow: hidden;
+  /* min-height: 100vh; */
+}
+.column1 {
+  /* height: 100vh; */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 h1,h2,h3,h4,h5,h6{
   font-family: "Outfit";
