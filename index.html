@@ -265,41 +265,70 @@
               ease: "power2.out"
             });
           </script>
-          
-          
-   <section class="about-style-three pb_60" id="Koovers">
+<!-- Your existing section -->
+<section class="about-style-three pb_60" id="Koovers">
     <div class="auto-container">
-        <div class="row align-items-center">
-
-            <div class="col-lg-6 col-md-6 col-sm-12 image-column" id="koovers-image">
-                <div class="image-box">
-                    <figure class="image"><img src="assets/images/about4.png" alt=""></figure>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-md-12 col-sm-12 content-column" id="koovers-content">
-                <div class="sec-title mb_10">
-                    <h2>Koovers DMS – The Ultimate Workshop Management Solution</h2>
-                </div>
-                <p>Koovers DMS is a powerful, all-in-one workshop management tool designed specifically for
-                    garage owners. This intuitive platform enables seamless management of daily operations,
-                    from job card creation to invoicing, spare parts ordering, and real-time tracking.</p>
-                <ul class="list-style-one clearfix mt_30">
-                    <li>Spare Parts Ordering</li>
-                    <li>Booking Management</li>
-                    <li>Job Card Management</li>
-                    <li>Estimation & Invoicing</li>
-                    <li>Automated Customer Notifications</li>
-                    <li>Customer Feedback Integration</li>
-                    <li>Advanced Analytics & Reports</li>
-                </ul>
-            </div>
-
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-6 col-sm-12 image-column koovers-animate-left" id="koovers-image">
+          <div class="image-box">
+            <figure class="image"><img src="assets/images/about4.png" alt=""></figure>
+          </div>
         </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 content-column koovers-animate-right" id="koovers-content">
+          <div class="sec-title mb_10">
+            <h2>Koovers DMS – The Ultimate Workshop Management Solution</h2>
+          </div>
+          <p>Koovers DMS is a powerful, all-in-one workshop management tool...</p>
+          <ul class="list-style-one clearfix mt_30">
+            <li>Spare Parts Ordering</li>
+            <li>Booking Management</li>
+            <li>Job Card Management</li>
+            <li>Estimation & Invoicing</li>
+            <li>Automated Customer Notifications</li>
+            <li>Customer Feedback Integration</li>
+            <li>Advanced Analytics & Reports</li>
+          </ul>
+        </div>
+      </div>
     </div>
-</section>
-
-<section id="parts-section" class="scroll-section">
+  </section>
+  <!-- Koovers section end -->
+    
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+  
+    // Image Animation from bottom to top
+    gsap.from("#koovers-image", {
+      scrollTrigger: {
+        trigger: "#koovers-image",  // Trigger when this element enters the viewport
+        start: "top 80%",           // Start the animation when the element's top is at 80% of the viewport height
+        end: "bottom top",          // End the animation when the element's bottom reaches the top of the viewport
+        scrub: true,                // Optional: makes the animation "scrub" with the scroll, smoothening it
+      },
+      y: 50,                      // Move the element 50px upwards
+      opacity: 0,                 // Start with 0 opacity (hidden)
+      duration: 1,                // Duration of the animation
+      ease: "power3.out",         // Easing for the animation
+    });
+  
+    // Content Animation from bottom to top
+    gsap.from("#koovers-content", {
+      scrollTrigger: {
+        trigger: "#koovers-content", // Trigger when this element enters the viewport
+        start: "top 80%",            // Start the animation when the element's top reaches 80% of the viewport height
+        end: "bottom top",           // End the animation when the element's bottom reaches the top of the viewport
+        scrub: true,                 // Optional: makes the animation "scrub" with the scroll, smoothening it
+      },
+      y: 50,                       // Move the element 50px upwards
+      opacity: 0,                  // Start with 0 opacity (hidden)
+      duration: 1,                 // Duration of the animation
+      delay: 0.2,                  // Delay to stagger with the previous animation
+      ease: "power3.out",          // Easing for the animation
+    });
+  </script>
+  
+  
+  <section id="parts-section" class="scroll-section">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 column1 scroll-left" style="background-image: url('assets/images/car.png');">
@@ -319,118 +348,157 @@
         </div>
     </div>
 </section>
+
 <script>
     gsap.registerPlugin(ScrollTrigger);
-  
-    // Apple-style scroll section animation
+
+    // Timeline to control both animations
     gsap.timeline({
-      scrollTrigger: {
-        trigger: "#parts-section",
-        start: "top top",
-        scrub: true,
-        pin: true,
-      }
+        scrollTrigger: {
+            trigger: "#parts-section",  // Trigger animation when this section enters the viewport
+            start: "top top",           // Start when the top of the section reaches the top of the viewport
+            scrub: true,                // Enable smooth scrubbing for the animation
+            pin: true,                  // Pin the section during scroll
+        }
     })
     .from(".scroll-left", {
-      x: -200,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out"
-    }, 0)
+        y: 200,                      // Start 200px below the element
+        opacity: 0,                  // Start with 0 opacity
+        duration: 1,                 // Duration of the animation
+        ease: "power2.out",          // Easing function for a smooth animation
+    }, 0)  // Start the animation immediately
+
     .from(".scroll-right", {
-      x: 200,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out"
-    }, 0);
-  </script>
+        y: 200,                      // Start 200px below the element
+        opacity: 0,                  // Start with 0 opacity
+        duration: 1,                 // Duration of the animation
+        ease: "power2.out",          // Easing function for a smooth animation
+    }, 0); // Start the animation immediately
+</script>
+
+  
   
 
-        <!-- chooseus-section -->
-        <section class="chooseus-section pl_70 pr_70" id="services">
-            <div class="outer-container pt_60 pb_60">
-                <div class="auto-container">
+     <!-- chooseus-section -->
+<section class="chooseus-section pl_70 pr_70" id="services">
+    <div class="outer-container pt_60 pb_60">
+        <div class="auto-container">
 
-                    <div class="row clearfix">
-                        <div class="col-lg-6 col-md-12 col-sm-12 title-column">
-                            <div class="sec-title mb_30">
-
-                                <h2 class="mb_10">Our Services</h2>
-                                <p>At Koovers, we go beyond just delivering spare parts—we provide a complete
-                                    ecosystem for workshops and retailers to operate efficiently.</p>
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title mb_30">
+                        <h2 class="mb_10">Our Services</h2>
+                        <p>At Koovers, we go beyond just delivering spare parts—we provide a complete ecosystem for workshops and retailers to operate efficiently.</p>
+                    </div>
+                    <figure class="image-box mr_20"><img src="assets/images/ourservices.png" alt=""></figure>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content-box ml_20">
+                        <div class="chooseus-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <figure class="image-box mr_20"><img src="assets/images/icons/Vast.svg" alt=""></figure>
+                                </div>
+                                <h3>Vast Spare Parts Inventory</h3>
+                                <p>A comprehensive catalogue of high-quality, OEM/OES-certified spare parts for all car brands, including BMW, Mercedes, Maruti, and Toyota.</p>
                             </div>
-                            <figure class="image-box mr_20"><img src="assets/images/ourservices.png" alt="">
-                            </figure>
                         </div>
-                        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                            <div class="content-box ml_20">
-                                <div class="chooseus-block-one">
-                                    <div class="inner-box">
-                                        <div class="icon-box">
-                                            <figure class="image-box mr_20"><img src="assets/images/icons/Vast.svg"
-                                                    alt="">
-                                            </figure>
-                                        </div>
-                                        <h3>Vast Spare Parts Inventory</h3>
-                                        <p>A comprehensive catalogue of high-quality, OEM/OES-certified spare parts for
-                                            all car brands, including BMW, Mercedes, Maruti, and Toyota.</p>
-                                    </div>
+                        <div class="chooseus-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <figure class="image-box mr_20"><img src="assets/images/icons/Nationwide.svg" alt=""></figure>
                                 </div>
-                                <div class="chooseus-block-one">
-                                    <div class="inner-box">
-                                        <div class="icon-box">
-                                            <figure class="image-box mr_20"><img
-                                                    src="assets/images/icons/Nationwide.svg" alt="">
-                                            </figure>
-                                        </div>
-                                        <h3>Nationwide Delivery</h3>
-                                        <p>Fast and reliable deliveries across India through our extensive distribution
-                                            network.</p>
-                                    </div>
+                                <h3>Nationwide Delivery</h3>
+                                <p>Fast and reliable deliveries across India through our extensive distribution network.</p>
+                            </div>
+                        </div>
+                        <div class="chooseus-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <figure class="image-box mr_20"><img src="assets/images/icons/Dedicated.svg" alt=""></figure>
                                 </div>
-                                <div class="chooseus-block-one">
-                                    <div class="inner-box">
-                                        <div class="icon-box">
-                                            <figure class="image-box mr_20"><img src="assets/images/icons/Dedicated.svg"
-                                                    alt="">
-                                            </figure>
-                                        </div>
-                                        <h3>Dedicated Customer Support</h3>
-                                        <p>A team of experts ready to assist with orders, inquiries, and technical
-                                            support.</p>
-                                    </div>
+                                <h3>Dedicated Customer Support</h3>
+                                <p>A team of experts ready to assist with orders, inquiries, and technical support.</p>
+                            </div>
+                        </div>
+                        <div class="chooseus-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <figure class="image-box mr_20"><img src="assets/images/icons/Seamless.svg" alt=""></figure>
                                 </div>
-                                <div class="chooseus-block-one">
-                                    <div class="inner-box">
-                                        <div class="icon-box">
-                                            <figure class="image-box mr_20"><img src="assets/images/icons/Seamless.svg"
-                                                    alt="">
-                                            </figure>
-                                        </div>
-                                        <h3>Seamless Digital Experience</h3>
-                                        <p>Our user-friendly app allows for quick browsing, ordering, and tracking of
-                                            automotive spares.</p>
-                                    </div>
+                                <h3>Seamless Digital Experience</h3>
+                                <p>Our user-friendly app allows for quick browsing, ordering, and tracking of automotive spares.</p>
+                            </div>
+                        </div>
+                        <div class="chooseus-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <figure class="image-box mr_20"><img src="assets/images/icons/Koovers.svg" alt=""></figure>
                                 </div>
-                                <div class="chooseus-block-one">
-                                    <div class="inner-box">
-                                        <div class="icon-box">
-                                            <figure class="image-box mr_20"><img src="assets/images/icons/Koovers.svg"
-                                                    alt="">
-                                            </figure>
-                                        </div>
-                                        <h3>Koovers Connect Stores</h3>
-                                        <p>City-level hubs ensuring faster local deliveries and immediate service.</p>
-                                    </div>
-                                </div>
-
+                                <h3>Koovers Connect Stores</h3>
+                                <p>City-level hubs ensuring faster local deliveries and immediate service.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- chooseus-section end -->
+        </div>
+    </div>
+</section>
+<!-- chooseus-section end -->
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate each "chooseus-block-one" from bottom to top as it comes into view
+    gsap.utils.toArray('.chooseus-block-one').forEach((block, index) => {
+        gsap.from(block, {
+            scrollTrigger: {
+                trigger: block,
+                start: "top 80%",         // Start the animation when the block's top is at 80% of the viewport height
+                end: "bottom top",        // End the animation when the block's bottom reaches the top of the viewport
+                scrub: true,              // Scrubs the animation with the scroll
+                once: true,               // Ensures the animation happens only once
+            },
+            y: 50,                      // Move the block 50px upwards
+            opacity: 0,                 // Start with 0 opacity
+            duration: 1,                // Duration of the animation
+            ease: "power3.out",         // Easing for the animation
+            delay: index * 0.2          // Delay each block slightly for a staggered effect
+        });
+    });
+
+    // Animate the image on the left (title-column) from bottom to top as it enters the viewport
+    gsap.from(".title-column", {
+        scrollTrigger: {
+            trigger: ".title-column", 
+            start: "top 80%", 
+            end: "bottom top",
+            scrub: true, 
+            once: true,
+        },
+        y: 50, 
+        opacity: 0, 
+        duration: 1, 
+        ease: "power3.out"
+    });
+
+    // Animate the image on the right (content-column) from bottom to top as it enters the viewport
+    gsap.from(".content-column", {
+        scrollTrigger: {
+            trigger: ".content-column", 
+            start: "top 80%", 
+            end: "bottom top",
+            scrub: true, 
+            once: true,
+        },
+        y: 50, 
+        opacity: 0, 
+        duration: 1, 
+        ease: "power3.out"
+    });
+</script>
+
         <!-- about-style-two -->
         <section class="about-style-two pt_60 pb_60">
             <div class="auto-container">
@@ -592,7 +660,27 @@
             </div>
         </section>
         <!-- service-style-three end -->
-
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+          
+            // Animation for service blocks
+            gsap.utils.toArray(".service-block").forEach(function(serviceBlock) {
+              gsap.from(serviceBlock, {
+                scrollTrigger: {
+                  trigger: serviceBlock,
+                  start: "top 80%",  // Trigger when the top of the block is at 80% of the viewport height
+                  end: "bottom top", // Animation ends when the block's bottom reaches the top of the viewport
+                  scrub: true,       // Optional: creates a smooth "scrub" effect as you scroll
+                  scrub: true, // makes it scroll-tied
+                },
+                y: 50,              // Start from 50px below
+                opacity: 0,         // Start with 0 opacity (hidden)
+                duration: 1,        // Duration of animation
+                ease: "power3.out", // Ease for smoothness
+              });
+            });
+          </script>
+          
         <!-- about-section -->
         <section class="about-section pt_60 pb_60">
             <div class="pattern-layer"></div>
