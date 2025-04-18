@@ -124,12 +124,13 @@
   transition: all 500ms ease;
 }
 
-.service-block-two .inner-box{
+.service-block-two .inner-box {
   position: relative;
   display: block;
-  padding: 22px;
+  padding: 21px;
   transition: all 500ms ease;
 }
+
 
 /* .service-block-two:hover .inner-box{
   padding-bottom: 80px;

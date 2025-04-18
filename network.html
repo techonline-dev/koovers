@@ -154,52 +154,31 @@
     </nav>
 </div>
 <!-- End Mobile Menu -->        <!-- about-style-two -->
-        <section class="about-style-two pt_60 pb_60">
+        <section class="about-style-two pb_60">
+            <img src="./assets/images/Koovers_Webiste Static Banner.jpeg">
             <div class="auto-container">
                 <div class="row align-items-center">
                     
-                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                        <div class="content_block_three">
-                            <div class="content-box ml_30">
-                                <div class="sec-title mb_25">
-                                    <h2>Our Network</h2>
-                                </div>
-                                <div class="text-box mb_35">
-                                    <p>Koovers has established a robust and extensive network with a Pan India presence,
-                                        ensuring seamless availability of high-quality spare parts across the country.
-                                        Our supply chain is strategically designed to enhance efficiency and provide
-                                        last-mile delivery solutions to our customers.
-                                    </p><br>
-
-                                </div>
-
-
-                            </div>
+                    <div class="content-box centred pt_20">
+                        <div class="sec-title">
+                            <h2>Our Network</h2>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                        <div class="image_block_two">
-                            <div class="image-box">
-                                <div class="image-shape">
-                                    <div class="shape-1 zoom-fade"
-                                        style="background-image: url(assets/images/shape/shape-2.png);"></div>
-                                    <div class="shape-2"
-                                        style="background-image: url(assets/images/shape/shape-3.png);"></div>
-                                </div>
-                                <figure class="image"><img src="assets/images/network.png" alt=""></figure>
+                        <div class="text-box mb_35">
+                            <p>Koovers has established a robust and extensive network with a Pan India presence,
+                                ensuring seamless availability of high-quality spare parts across the country.
+                                Our supply chain is strategically designed to enhance efficiency and provide
+                                last-mile delivery solutions to our customers.
+                            </p><br>
 
-                            </div>
                         </div>
-                    </div>
 
+
+                    </div>
+                  
                 </div>
             </div>
-        </section>
-        <!-- about-style-two end -->
-
-
-        <!-- feature-section -->
-        <section class="feature-section style-two pt_60">
+                <!-- feature-section -->
+        <section class="feature-section style-two">
             <div class="auto-container">
 
                 <div class="row clearfix">
@@ -209,8 +188,11 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one ">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="assets/images/Hubs.png" alt=""></figure>
-                                <h3>Hubs</h3>
+                                <figure class="image-box"><img src="assets/images/hub.jpg" alt=""></figure>
+                                <h3 style="color: #f16321;"> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f16321">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5
+                                    c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                                </svg>Hubs</h3>
 
                                 <div class="lower-content">
                                     <p>Our central warehouses, serving as the backbone of our distribution system. From these hubs, we efficiently cater to multiple locations, ensuring a steady and uninterrupted supply of spare parts.
@@ -222,8 +204,11 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one ">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="assets/images/Connects.png" alt=""></figure>
-                                <h3>Connects</h3>
+                                <figure class="image-box"><img src="assets/images/Connects.jpg" alt=""></figure>
+                                <h3>  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#005277">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5
+                                    c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                                </svg>Connects   </h3>
 
                                 <div class="lower-content">
                                     <p>Our regional stores, are strategically located to service nearby cities. They function as the vital link between our hubs and customers, facilitating faster deliveries and localized support.</p>
@@ -236,7 +221,13 @@
                     
                 </div>
             </div>
+            
         </section>
+        </section>
+        <!-- about-style-two end -->
+
+
+    
         <!-- feature-section end -->
         <div class="container text-center mt-4">
             <div class="sec-title centred mb_25">
@@ -267,21 +258,36 @@
                     })
                     .catch(error => console.error("Error loading GeoJSON:", error));
         
-                // Default blue marker for "Our Hubs"
-                var defaultIcon = L.icon({
-                    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-                });
-        
-                // Custom red marker for "Connect"
-                var redIcon = L.icon({
-                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-                    iconSize: [25, 41],
-                    iconAnchor: [12, 41],
-                    popupAnchor: [1, -34],
-                    shadowSize: [41, 41]
-                });
+           // Orange marker for "Our Hubs"
+// Custom orange (#f16321) SVG marker for "Our Hubs"
+var defaultIcon = L.divIcon({
+    className: '',
+    html: `
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f16321">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5
+            c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+        </svg>
+    `,
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+});
+
+
+             // Custom blue (#005277) SVG marker for "Connect"
+var redIcon = L.divIcon({
+    className: '',
+    html: `
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#005277">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5
+            c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+        </svg>
+    `,
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+});
+
         
                 var hubs = [
                     { name: "Bangalore", lat: 12.9716, lon: 77.5946, address: "No 28, 1, Sirsi Rd, Chamrajpet, Bengaluru, Karnataka 560018", phone: "📞 8970029000" },
@@ -365,10 +371,9 @@
                                 </div>
                             </div>
                             <ul class="social-links">
-                                <li><a href="#"><img src="assets/images/icons/facebook.svg" alt=""></a></li>
-                                <li><a href="#"><img src="assets/images/icons/insta.svg" alt=""></i></a></li>
-                                <li><a href="#"><img src="assets/images/icons/linkdin.svg" alt=""></i></a></li>
-                                <li><a href="#"><img src="assets/images/icons/x.svg" alt=""></a></li>
+                                <li><a href="https://www.facebook.com/people/Koovers-India/61566823085657/" target="_blank"><img src="assets/images/icons/facebook.svg" alt=""></a></li>
+                                <li><a href="https://www.instagram.com/kooversindia/" target="_blank"><img src="assets/images/icons/insta.svg" alt=""></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/koovers" target="_blank"><img src="assets/images/icons/linkdin.svg" alt=""></i></a></li>
                             </ul>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 footer-column">

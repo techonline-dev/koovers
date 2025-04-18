@@ -39,7 +39,7 @@
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 30px;
+  /* border-radius: 30px; */
 }
 
 .feature-block-one .inner-box .image-box img{
@@ -74,7 +74,8 @@
 }
 
 .feature-section.style-two .feature-block-one .inner-box .image-box{
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .feature-section.style-two .feature-block-one .inner-box h3{
