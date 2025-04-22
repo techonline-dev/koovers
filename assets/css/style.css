@@ -221,7 +221,12 @@ h1,h2,h3,h4,h5,h6{
   color: #005277;
     margin: 0px;
 }
-
+.bg-color-3
+{
+  background: #FEF3EE;
+  padding: 25px;
+  border-radius: 20px;
+}
 .chooseus-section {
   display: flex;
   max-width: 1300px;
@@ -229,6 +234,58 @@ h1,h2,h3,h4,h5,h6{
   padding: 100px 20px;
   min-height: 100vh;
   gap: 60px;
+}
+/* Basic Setup for Section */
+.about-style-three {
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px); /* Initially positioned below */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}
+
+/* The keyframes for the animation */
+@keyframes slideUp {
+  0% {
+      transform: translateY(50px); /* Start below */
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0); /* Move to normal position */
+      opacity: 1;
+  }
+}
+
+/* Optional: If you want to trigger the animation only when the element is visible in the viewport */
+.about-style-three.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Add a smooth transition when scrolling into view */
+@media (prefers-reduced-motion: no-preference) {
+  .about-style-three {
+      animation: slideUp 1s ease-in-out; /* Custom easing */
+  }
+}
+
+.reveal-section .content-box,
+.reveal-section .image-box {
+  /* opacity: 0; */
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.reveal-section.active .content-box {
+  /* opacity: 1; */
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.reveal-section.active .image-box {
+  /* opacity: 1; */
+  transform: translateY(0);
+  transition-delay: 0.4s;
 }
 
 /* Sticky image container for this section only */
