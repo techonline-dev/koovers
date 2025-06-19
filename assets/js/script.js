@@ -645,10 +645,31 @@
 })(window.jQuery);
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a[href^="#"], .mobile-menu a[href*="index.html#"]');
 
+    mobileMenuLinks.forEach(function (anchor) {
+        anchor.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            const targetId = href.includes('#') ? href.split('#')[1] : null;
 
+            if (targetId) {
+                e.preventDefault();
 
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
 
+                // Close mobile menu
+                document.querySelector('.mobile-menu').classList.remove('menu-open');
+                document.querySelector('.menu-backdrop')?.classList.remove('active');
+                document.body.classList.remove('mobile-menu-visible');
+                document.querySelector('.mobile-menu .close-btn')?.click(); // optional: trigger close button
+            }
+        });
+    });
+});
 
 
 

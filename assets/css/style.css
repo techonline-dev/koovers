@@ -269,6 +269,7 @@ h1,h2,h3,h4,h5,h6{
   }
 }
 
+
 .reveal-section .content-box,
 .reveal-section .image-box {
   /* opacity: 0; */
@@ -1819,4 +1820,10 @@ button.ltr {
 
   .margin-left-60 {
     margin-left: 60%;
+  }
+
+  .flexfooter
+  {
+    display: flex;
+    gap: 25px;
   }

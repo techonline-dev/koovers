@@ -21,15 +21,25 @@
     <link href="assets/css/responsive.css" rel="stylesheet">
 
 </head>
-
-
 <!-- page wrapper -->
-
+<script>
+    window.addEventListener("load", function () {
+      if (window.location.hash) {
+        setTimeout(() => {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            const yOffset = -80; // adjust if your header is taller
+            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 100); // slight delay ensures layout is ready
+      }
+    });
+  </script>
+  
 <body>
 
     <div class="boxed_wrapper ltr">
-
-        <!-- main header -->
         <header class="main-header header-style-three">
             <!-- header-lower -->
             <div class="header-lower">
@@ -111,8 +121,6 @@
                 </div>
             </div>
         </header>
-        <!-- main-header end -->
-        <!-- Mobile Menu  -->
         <div class="mobile-menu">
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
@@ -132,8 +140,6 @@
 
             </nav>
         </div>
-        <!-- End Mobile Menu -->
-
         <!-- contact-section -->
         <section class="contact-section pt_70 pb_70">
             <div class="auto-container">
@@ -151,20 +157,20 @@
                             <div class="info-box mb_50">
                                 <ul class="info-list clearfix">
                                     <li><i class="icon-41"></i><span>
-                                            <span class="locationtitle">Our Location</span>
                                             Armatic Building, 3rd Floor, Park Inc, No 8,
                                             27th Cross Rd,Banashankari Stage II,
                                             Bengaluru, Karnataka 560070
                                         </span>
                                     </li>
                                     <li><i class="icon-42"></i>
-                                        <span class="locationtitle">Phone Number <br> <a href="tel:+91 8970029000">+91
-                                                8970029000</a></span>
+                                        <span class="locationtitle"><span> </span>
+                                            <a href="tel:+91 8970029000">+91 8970029000</a></span>
 
                                     </li>
                                     <li><i class="icon-43"></i>
-                                        <p class="locationtitle">Email Address <br> <a
-                                                href="mailto:customersupport@koovers.in">customersupport@koovers.in</a>
+                                        <p class="locationtitle"><span> </span>
+                                                <a
+                                                href="mailto:customersupport[at]koovers.in">customersupport@koovers.in</a>
                                         </p>
 
 
@@ -216,7 +222,7 @@
                     <div class="widget-section p_relative pt_40">
                         <div class="auto-container">
                             <div class="row clearfix">
-                                <div class="col-lg-3 col-md-12 col-sm-12 footer-column">
+                                <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
                                     <div class="footer-widget contact-widget">
                                         <figure class="logo-box"><a href="index.html"><img
                                                     src="assets/images/kooversLogo.svg" alt=""></a>
@@ -247,8 +253,8 @@
                                                     src="assets/images/icons/linkdin.svg" alt=""></i></a></li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
-                                    <div class="auto-container" style="
+                                <div class="col-lg-2 col-md-12 col-sm-12 footer-column">
+                                    <!-- <div class="auto-container" style="
                     padding: 0px;
                 ">
                                         <div class="row d-flex flex-wrap">
@@ -278,18 +284,18 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
 
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                                    <div class="footer-widget links-widget download-btn">
+                                <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                                    <div class="footer-widget links-widget">
 
                                         <div class="widget-content mt_50">
-                                            <ul class="links-list clearfix">
-                                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                                <li><a href="termsofuse.html">Terms of Use</a></li>
-                                                <li><a href="returnpolicy.html">Return Policy</a></li>
+                                            <ul class="links-list clearfix flexfooter">
+                                              <li><a href="content/privacy.html">Privacy Policy</a></li>
+                                                <li><a href="content/termsofuse.html">Terms of Use</a></li>
+                                                <li><a href="content/returnpolicy.html">Return Policy</a></li>
 
                                             </ul>
                                         </div>

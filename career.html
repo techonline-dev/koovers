@@ -21,6 +21,21 @@
     <link href="assets/css/responsive.css" rel="stylesheet">
 </head>
 <!-- page wrapper -->
+<script>
+    window.addEventListener("load", function () {
+      if (window.location.hash) {
+        setTimeout(() => {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            const yOffset = -80; // adjust if your header is taller
+            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 100); // slight delay ensures layout is ready
+      }
+    });
+  </script>
+
 
 <body>
     <div class="boxed_wrapper ltr">
@@ -193,7 +208,7 @@
                                         <button class="accordion-button faqtitle" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseSales"
                                             aria-expanded="true" aria-controls="collapseSales">
-                                            Sales (4)
+                                            Sales (2)
                                         </button>
                                     </h2>
                                     <div id="collapseSales" class="accordion-collapse collapse show"
@@ -249,54 +264,76 @@
                                                     </div>
 
                                                 </div>
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="headingSalesSub2">
+                                                 <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingSalesSub">
                                                         <button class="accordion-button collapsed" type="button"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#collapseSalesSub2" aria-expanded="false"
-                                                            aria-controls="collapseSalesSub2">
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseSalesSub1"
+                                                            aria-expanded="false" aria-controls="collapseSalesSub1">
                                                             <div class="job-listing">
                                                                 <span class="job-title">
-                                                                    CRM - Customer Relations Manager (10)
+                                                                    CRM - Field Sales Executive
                                                                 </span>
 
-                                                                <span class="job-tag">📄 1-5 years</span>
+                                                                <span class="job-tag">📄 2+ years</span>
                                                                 <span class="job-tag">💼 Full time</span>
                                                                 <span class="job-tag">📍 Bangalore</span>
                                                             </div>
                                                         </button>
                                                     </h2>
-                                                    <div id="collapseSalesSub2" class="accordion-collapse collapse"
-                                                        aria-labelledby="headingSalesSub2"
+                                                    <div id="collapseSalesSub1" class="accordion-collapse collapse"
+                                                        aria-labelledby="headingSalesSub"
                                                         data-bs-parent="#subAccordion">
                                                         <div class="accordion-body">
-                                                            <h5 class="mb_25">About The Position</h5>
-                                                            <ul class="list-style-one pb_25 clearfix">
-                                                                <li>Independently handle multi-brand workshops/retailers
+                                                            <h5 class="mb_25">About Koovers</h5>
+                                                            <p>Koovers is a leading B2B platform specializing in automobile spare parts. We provide seamless solutions to retailers, workshops, and businesses in the automobile industry, offering a wide range of quality products and excellent customer support. We are looking for a motivated and experienced CRM - Field Sales Executive to join our growing team.</p> <br>
+                                                            <h5 class="mb_25">Role Overview</h5>
+                                                            <p>The CRM - Field Sales Executive will be responsible for building and maintaining strong relationships with customers, driving sales of automobile spare parts, and ensuring client satisfaction. The role focuses on working with retailers and workshops in the automobile industry.</p><br>
+                                                            <h5 class="mb_25">Key Responsibilities</h5>
+                                                             <ul class="list-style-one pb_25 clearfix">
+                                                                <li><b>Customer Relationship Management:</b> Build and nurture long-term relationships with retailers and workshops in the automobile spare parts sector.
                                                                 </li>
-                                                                <li>End-to-end management of spares sales, collection,
-                                                                    and delivery coordination</li>
-                                                                <li>Coordinate with Operations team (procurement) for
-                                                                    availability of spares</li>
-                                                                <li>Coordinate with Operations team (warehouse) for
-                                                                    dispatching the materials as per TAT</li>
-                                                                <li>Coordinate with Billing team for timely dispatch of
-                                                                    bills to customers</li>
-                                                                <li>Coordinate with Accounts for bills receivable and
-                                                                    reconciliation of outstanding</li>
-                                                                <li>Coordinate with delivery partners to ensure timely
-                                                                    delivery</li>
-                                                                <li>Report to the State Head Sales on day-to-day
-                                                                    activities</li>
-                                                                <li>Own assigned target and ensure proper achievement of
-                                                                    the same</li>
+                                                                <li><b>Sales Growth:</b> Identify and pursue new sales opportunities to achieve and exceed targets.</li>
+                                                                <li><b>Client Engagement:</b> Regularly meet with customers, understand their requirements, and recommend suitable products.</li>
+                                                                <li><b>Market Analysis:</b> Monitor market trends and competitor activities to identify opportunities and challenges.</li>
+                                                                <li><b>Order Management:</b> Assist customers with placing orders and ensure timely delivery of spare parts.</li>
+                                                                <li><b>Problem Resolution:</b> Address customer queries and complaints promptly, ensuring high levels of satisfaction.</li>
+                                                                <li><b>Reporting:</b> Maintain detailed records of sales activities and provide regular updates to the management.</li>
+                                                            
                                                             </ul>
+                                                            <h5 class="mb_25">Candidate Profile</h5>
+                                                           
+                                                            <h6 class="mb_25">Experience:</h6>
+                                                            <ul class="list-style-one pb_25 clearfix">
+                                                                <li>Minimum 2+ years of experience in field sales, specifically in automobile spare parts sales.
+                                                                </li>
+                                                                <li>Prior experience working with retailers or workshops is essential.</li>
+                                                            </ul>
+                                                             <h6 class="mb_25">Skills:</h6>
+                                                            <ul class="list-style-one pb_25 clearfix">
+                                                                <li>Strong sales and negotiation skills.
+                                                                </li>
+                                                                <li>Excellent communication and interpersonal abilities.</li>
+                                                                <li>Proficiency in customer relationship management tools and software is a plus.</li>
+                                                            </ul>
+                                                             <h6 class="mb_25">Personal Attributes:</h6>
+                                                            <ul class="list-style-one pb_25 clearfix">
+                                                                <li>Goal-oriented and self-motivated.
+                                                                </li>
+                                                                <li>Ability to work independently and as part of a team.</li>
+                                                                <li>Willingness to travel extensively for fieldwork.</li>
+                                                            </ul>
+                                                             <h5 class="mb_25">Educational Qualifications</h5>
+                                                              <ul class="list-style-one pb_25 clearfix">
+                                                               <li>Diploma/ Bachelor’s degree in Business, Marketing, or a related field preferred.</li>
+                                                              </ul>
                                                             <a href="mailto:koovers.in" class="theme-btn btn-one"><span
                                                                     class="text">Apply Now</span></a>
 
                                                         </div>
                                                     </div>
+
                                                 </div>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -308,14 +345,79 @@
                                         <button class="accordion-button collapsed faqtitle" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseWarehouse"
                                             aria-expanded="false" aria-controls="collapseWarehouse">
-                                            Warehouse (2)
+                                            Warehouse (1)
                                         </button>
                                     </h2>
                                     <div id="collapseWarehouse" class="accordion-collapse collapse"
                                         aria-labelledby="headingWarehouse" data-bs-parent="#mainAccordion">
                                         <div class="accordion-body">
-                                            <p>Blandit aliquet varius id malesuada nunc euismod id tempor malesuada
-                                                sollicitudin sit nisi tellus auctor vitae dignissim.</p>
+                                           <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingSalesSub">
+                                                        <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseSalesSub1"
+                                                            aria-expanded="false" aria-controls="collapseSalesSub1">
+                                                            <div class="job-listing">
+                                                                <span class="job-title">
+                                                                    Warehouse Executive (10)
+                                                                </span>
+
+                                                                <span class="job-tag">📄 0-2 years</span>
+                                                                <span class="job-tag">💼 Full time</span>
+                                                                <span class="job-tag">📍 Bangalore</span>
+                                                            </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSalesSub1" class="accordion-collapse collapse"
+                                                        aria-labelledby="headingSalesSub"
+                                                        data-bs-parent="#subAccordion">
+                                                        <div class="accordion-body">
+                                                            <h5 class="mb_25">Job Summary</h5>
+                                                            <p>We are looking for a Warehouse Executive to join our dynamic team at Koovers. The role involves ensuring efficient warehouse operations, including picking, quality checking, and packing of automobile spare parts. The ideal candidate will be detail-oriented, reliable, and eager to contribute to the smooth functioning of our warehouse.</p> <br>
+                                                            <h5 class="mb_25">Key Responsibilities</h5>
+                                                             <ul class="list-style-one pb_25 clearfix">
+                                                                <li>Perform order picking of automobile spare parts from shelves based on order requirements.</li>
+                                                                <li>Conduct quality checks to ensure all parts meet quality standards before packing.</li>
+                                                                <li>Pack products securely to ensure safe transit and delivery.</li>
+                                                                <li>Maintain accurate inventory records and update the warehouse management system.</li>
+                                                                <li>Assist with stock replenishment and organization of warehouse shelves.</li>
+                                                                <li>Ensure the cleanliness and safety of the warehouse environment.</li>
+                                                                <li>Collaborate with the team to meet operational targets and deadlines.</li>
+                                                                <li>Report any discrepancies, damages, or quality issues to the Warehouse Manager.</li>
+                                                            
+                                                            </ul>
+                                                            <h5 class="mb_25">Educational Qualifications</h5>
+                                                            <ul class="list-style-one pb_25 clearfix">
+                                                                <li>Any educational qualification.</li>
+                                                            </ul>
+
+                                                            <h5 class="mb_25">Industry Experience:</h5>
+                                                           
+                                                            <ul class="list-style-one pb_25 clearfix">
+                                                                <li>Previous experience in warehouse operations, logistics, or related fields is preferred.</li>
+                                                                <li>Fresher or 1-2 years of experience in a warehouse environment is acceptable.</li>
+                                                            </ul>
+                                                             <h5 class="mb_25">Skills and Competencies:</h5>
+                                                            <ul class="list-style-one pb_25 clearfix">
+                                                                <li>Basic knowledge of warehouse operations, including picking, packing, and quality control.
+                                                                </li>
+                                                                <li>Ability to work in a fast-paced environment and handle multiple tasks efficiently.</li>
+                                                                <li>Good attention to detail and organizational skills.</li>
+                                                                <li>Familiarity with warehouse management systems (WMS) is a plus.</li>
+                                                                <li>Strong communication skills.</li>
+                                                            </ul>
+                                                             <h5 class="mb_25">Physical Requirements</h5>
+                                                            <ul class="list-style-one pb_25 clearfix">
+                                                                <li>Ability to lift and move products safely and efficiently.
+                                                                </li>
+                                                                <li>Standing and walking for extended periods during the shift.</li>
+                                                            </ul>
+                                                            <a href="mailto:koovers.in" class="theme-btn btn-one"><span
+                                                                    class="text">Apply Now</span></a>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -326,14 +428,78 @@
                                         <button class="accordion-button collapsed faqtitle" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseTech"
                                             aria-expanded="false" aria-controls="collapseTech">
-                                            Tech (5)
+                                            Store (1)
                                         </button>
                                     </h2>
                                     <div id="collapseTech" class="accordion-collapse collapse"
                                         aria-labelledby="headingTech" data-bs-parent="#mainAccordion">
                                         <div class="accordion-body">
-                                            <p>Blandit aliquet varius id malesuada nunc euismod id tempor malesuada
-                                                sollicitudin sit nisi tellus auctor vitae dignissim.</p>
+                                            <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseSalesSub1"
+                                                            aria-expanded="false" aria-controls="collapseSalesSub1">
+                                                            <div class="job-listing">
+                                                                <span class="job-title">
+                                                                    Store Manager (6)
+                                                                </span>
+
+                                                                <span class="job-tag">📄 11+ years</span>
+                                                                <span class="job-tag">💼 Full time</span>
+                                                                <span class="job-tag">📍 Bangalore</span>
+                                                            </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseSalesSub1" class="accordion-collapse collapse"
+                                                        aria-labelledby="headingSalesSub"
+                                                        data-bs-parent="#subAccordion">
+                                                        <div class="accordion-body">
+                                                            <h5 class="mb_25">About Koovers</h5>
+                                                            <p>Koovers is a leading B2B platform specializing in automobile spare parts. We provide seamless solutions to retailers, workshops, and businesses in the automobile industry, offering a wide range of quality products and excellent customer support. We are seeking an experienced Store Manager to oversee operations, manage sales and purchases, and ensure smooth vendor management.</p> <br>
+                                                            <h5 class="mb_25">Role Overview</h5>
+                                                            <p>The Store Manager will be responsible for efficiently managing store operations, driving sales growth, overseeing procurement activities, and maintaining strong vendor relationships to support business objectives.</p><br>
+                                                            <h5 class="mb_25">Key Responsibilities</h5>
+                                                             <ul class="list-style-one pb_25 clearfix">
+                                                                <li><b>Store Operations:</b>Oversee daily store operations, ensuring smooth workflow and adherence to company policies.</li>
+                                                                <li><b>Sales Management:</b> Drive store sales by engaging with customers, identifying their needs, and providing solutions through effective product recommendations.</li>
+                                                                <li><b>Procurement:</b> Manage the purchasing of automobile spare parts, ensuring cost-effective procurement without compromising on quality.</li>
+                                                                <li><b>Vendor Management:</b>Build and maintain strong relationships with vendors to ensure timely delivery and competitive pricing of spare parts.</li>
+                                                                <li><b>Team Leadership: </b> Lead, train, and motivate the store team to deliver excellent service and achieve performance targets.</li>
+                                                                <li><b>Inventory Management: </b> Monitor and control inventory levels, avoiding overstocking or stockouts, and ensure accurate record-keeping.</li>
+                                                                <li><b>Collections: </b> Ensure timely collection of payments from customers and coordinate with the credit control team to minimize outstanding dues.</li>
+                                                                <li><b>Customer Engagement: </b> Ensure high levels of customer satisfaction through exceptional service and prompt issue resolution.</li>
+                                                                <li><b>Compliance:</b>Ensure adherence to safety standards, regulatory requirements, and company protocols.</li>
+                                                            
+                                                            </ul>
+                                                            <h5 class="mb_25">Candidate Profile</h5>
+                                                           
+                                                            <h6 class="mb_25">Experience:</h6>
+                                                            <ul class="list-style-one pb_25 clearfix">
+                                                                <li>11+ years of experience in automobile spare parts sales.
+                                                                </li>
+                                                                <li>Proven track record in store handling, procurement, and vendor management, especially in retailer or workshop settings.</li>
+                                                            </ul>
+                                                             <h6 class="mb_25">Skills:</h6>
+                                                            <ul class="list-style-one pb_25 clearfix">
+                                                                <li>Strong leadership and team management abilities.
+                                                                </li>
+                                                                <li>Excellent negotiation and relationship management skills.</li>
+                                                                <li>Proficient in inventory and store management systems.</li>
+                                                                <li>Sound knowledge of automobile spare parts and market trends.</li>
+                                                                <li>Strong problem-solving and organizational skills.</li>
+                                                            </ul>
+                                                             <h6 class="mb_25">Adaptability: </h6>
+                                                            <ul class="list-style-one pb_25 clearfix">
+                                                                <li>Willingness to work in a dynamic and fast-paced environment.
+                                                                </li>
+                                                            </ul>
+                                                             <h5 class="mb_25">Educational Qualifications</h5>
+                                                              <ul class="list-style-one pb_25 clearfix">
+                                                               <li>Bachelor’s degree in Business Administration, Supply Chain Management, or a related field.</li>
+                                                              </ul>
+                                                            <a href="mailto:koovers.in" class="theme-btn btn-one"><span
+                                                                    class="text">Apply Now</span></a>
+
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
                                 </div>
@@ -364,7 +530,7 @@
         </section>
         <!-- faq-section end -->
 
-        <!-- main-footer -->
+       <!-- main-footer -->
         <footer class="main-footer radius_0">
             <div class="outer-container p_relative">
 
@@ -372,7 +538,7 @@
                     <div class="widget-section p_relative pt_40">
                         <div class="auto-container">
                             <div class="row clearfix">
-                                <div class="col-lg-3 col-md-12 col-sm-12 footer-column">
+                                <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
                                     <div class="footer-widget contact-widget">
                                         <figure class="logo-box"><a href="index.html"><img
                                                     src="assets/images/kooversLogo.svg" alt=""></a>
@@ -403,8 +569,8 @@
                                                     src="assets/images/icons/linkdin.svg" alt=""></i></a></li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
-                                    <div class="auto-container" style="
+                                <div class="col-lg-2 col-md-12 col-sm-12 footer-column">
+                                    <!-- <div class="auto-container" style="
                     padding: 0px;
                 ">
                                         <div class="row d-flex flex-wrap">
@@ -434,18 +600,18 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
 
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                                    <div class="footer-widget links-widget download-btn">
+                                <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                                    <div class="footer-widget links-widget">
 
                                         <div class="widget-content mt_50">
-                                            <ul class="links-list clearfix">
-                                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                                <li><a href="termsofuse.html">Terms of Use</a></li>
-                                                <li><a href="returnpolicy.html">Return Policy</a></li>
+                                            <ul class="links-list clearfix flexfooter">
+                                              <li><a href="content/privacy.html">Privacy Policy</a></li>
+                                                <li><a href="content/termsofuse.html">Terms of Use</a></li>
+                                                <li><a href="content/returnpolicy.html">Return Policy</a></li>
 
                                             </ul>
                                         </div>

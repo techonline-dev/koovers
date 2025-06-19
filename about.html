@@ -21,6 +21,21 @@
     <link href="assets/css/responsive.css" rel="stylesheet">
     <link href="assets/css/module-css/service.css" rel="stylesheet">
 </head>
+<!-- page wrapper -->
+<script>
+    window.addEventListener("load", function () {
+      if (window.location.hash) {
+        setTimeout(() => {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            const yOffset = -80; // adjust if your header is taller
+            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 100); // slight delay ensures layout is ready
+      }
+    });
+  </script>
 
 <body>
 
@@ -337,7 +352,7 @@
                     <div class="widget-section p_relative pt_40">
                         <div class="auto-container">
                             <div class="row clearfix">
-                                <div class="col-lg-3 col-md-12 col-sm-12 footer-column">
+                                <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
                                     <div class="footer-widget contact-widget">
                                         <figure class="logo-box"><a href="index.html"><img
                                                     src="assets/images/kooversLogo.svg" alt=""></a>
@@ -368,8 +383,8 @@
                                                     src="assets/images/icons/linkdin.svg" alt=""></i></a></li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
-                                    <div class="auto-container" style="
+                                <div class="col-lg-2 col-md-12 col-sm-12 footer-column">
+                                    <!-- <div class="auto-container" style="
                     padding: 0px;
                 ">
                                         <div class="row d-flex flex-wrap">
@@ -399,18 +414,18 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
 
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                                    <div class="footer-widget links-widget download-btn">
+                                <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                                    <div class="footer-widget links-widget">
 
                                         <div class="widget-content mt_50">
-                                            <ul class="links-list clearfix">
-                                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                                <li><a href="termsofuse.html">Terms of Use</a></li>
-                                                <li><a href="returnpolicy.html">Return Policy</a></li>
+                                            <ul class="links-list clearfix flexfooter">
+                                              <li><a href="content/privacy.html">Privacy Policy</a></li>
+                                                <li><a href="content/termsofuse.html">Terms of Use</a></li>
+                                                <li><a href="content/returnpolicy.html">Return Policy</a></li>
 
                                             </ul>
                                         </div>

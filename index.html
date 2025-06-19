@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,11 +35,53 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 </head>
-
+<!-- page wrapper -->
+<script>
+    window.addEventListener("load", function () {
+      if (window.location.hash) {
+        setTimeout(() => {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            const yOffset = -80; // adjust if your header is taller
+            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 100); // slight delay ensures layout is ready
+      }
+    });
+  </script>
 <script>
     new WOW().init();
     </script>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const backdrop = document.querySelector(".menu-backdrop");
+      const closeBtn = document.querySelector(".close-btn");
+  
+      // Close menu function
+      function closeMobileMenu() {
+        mobileMenu.classList.remove("menu-active");
+        document.body.classList.remove("mobile-menu-visible");
+      }
+  
+      // Close on link click
+      document.querySelectorAll(".mobile-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+          closeMobileMenu();
+        });
+      });
+  
+      // Optional: Close when clicking outside
+      if (backdrop) {
+        backdrop.addEventListener("click", closeMobileMenu);
+      }
+  
+      if (closeBtn) {
+        closeBtn.addEventListener("click", closeMobileMenu);
+      }
+    });
+  </script>
 <!-- page wrapper -->
 
 <body>
@@ -232,7 +275,7 @@
   </script>
   
   <section class="about-style-three pb_60 pt_60 wow animate__backInUp" id="animElement">
-    <div class="auto-container">
+    <div class="auto-container" id="Koovers">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-sm-12 image-column" id="koovers-image">
                 <div class="image-box">
@@ -379,7 +422,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </section>
         <!-- chooseus-section end -->
 
-        <script>
+        <!-- <script>
             gsap.registerPlugin(ScrollTrigger);
 
             // Animate each "chooseus-block-one" from bottom to top as it comes into view
@@ -429,7 +472,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 duration: 1,
                 ease: "power3.out"
             });
-        </script>
+        </script> -->
 
         <!-- about-style-two -->
         <section class="about-style-two pt_60 pb_60">
@@ -603,7 +646,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             </div>
         </section>
-  
+        <!-- service-style-three end -->
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animation for service blocks
+            gsap.utils.toArray(".service-block").forEach(function (serviceBlock) {
+                gsap.from(serviceBlock, {
+                    scrollTrigger: {
+                        trigger: serviceBlock,
+                        start: "top 80%",  // Trigger when the top of the block is at 80% of the viewport height
+                        end: "bottom top", // Animation ends when the block's bottom reaches the top of the viewport
+                        scrub: true,       // Optional: creates a smooth "scrub" effect as you scroll
+                        scrub: true, // makes it scroll-tied
+                    },
+                    y: 50,              // Start from 50px below
+                    opacity: 0,         // Start with 0 opacity (hidden)
+                    duration: 1,        // Duration of animation
+                    ease: "power3.out", // Ease for smoothness
+                });
+            });
+        </script>
+
         <!-- about-section -->
         <section class="about-section pt_60 pb_60">
             <div class="pattern-layer"></div>
@@ -666,8 +730,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         </script>
 
-
-        <!-- main-footer -->
+     <!-- main-footer -->
         <footer class="main-footer radius_0">
             <div class="outer-container p_relative">
 
@@ -675,7 +738,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="widget-section p_relative pt_40">
                         <div class="auto-container">
                             <div class="row clearfix">
-                                <div class="col-lg-3 col-md-12 col-sm-12 footer-column">
+                                <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
                                     <div class="footer-widget contact-widget">
                                         <figure class="logo-box"><a href="index.html"><img
                                                     src="assets/images/kooversLogo.svg" alt=""></a>
@@ -706,8 +769,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                                     src="assets/images/icons/linkdin.svg" alt=""></i></a></li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
-                                    <div class="auto-container" style="
+                                <div class="col-lg-2 col-md-12 col-sm-12 footer-column">
+                                    <!-- <div class="auto-container" style="
                     padding: 0px;
                 ">
                                         <div class="row d-flex flex-wrap">
@@ -737,18 +800,18 @@ document.addEventListener("DOMContentLoaded", function () {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
 
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                                    <div class="footer-widget links-widget download-btn">
+                                <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                                    <div class="footer-widget links-widget">
 
                                         <div class="widget-content mt_50">
-                                            <ul class="links-list clearfix">
-                                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                                <li><a href="termsofuse.html">Terms of Use</a></li>
-                                                <li><a href="returnpolicy.html">Return Policy</a></li>
+                                            <ul class="links-list clearfix flexfooter">
+                                              <li><a href="content/privacy.html">Privacy Policy</a></li>
+                                                <li><a href="content/termsofuse.html">Terms of Use</a></li>
+                                                <li><a href="content/returnpolicy.html">Return Policy</a></li>
 
                                             </ul>
                                         </div>

@@ -114,16 +114,20 @@
   {
     margin-top: 20px;
   }
-  .download {
+  /* .download {
     width: 70%;
     margin-top: 12%;
     margin-left: 25%;
-}
+} */
 .textwidth
 {
   width: 100%;
 }
-
+  .flexfooter
+  {
+    display:block;
+    gap: 25px;
+  }
 
 }
 
